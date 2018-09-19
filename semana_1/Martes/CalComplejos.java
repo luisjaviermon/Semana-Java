@@ -23,16 +23,14 @@ public class CalComplejos{
 		this.real_2= this.teclado.nextDouble();
 		System.out.println("Ingrese la parte imaginaria: ");
 		this.im_2 = this.teclado.nextDouble();
-
-		System.out.println("\nTus numeros son : \nZ1 = " + this.real_1 + "+" + this.im_1 + "i\nZ2 = " + this.real_2 + "+" + this.im_2 + "i\n");
 	}
 
-	public double getReal(){
-		return real_f;
-	}
-
-	public double getIm(){
-		return im_f;
+	public void impRes(){
+		if(this.im_f < 0){
+			System.out.println("Resultado: " + this.real_f + " " + this.im_f + "i");
+			}else{
+				System.out.println("Resultado: " + this.real_f + "+" + this.im_f + "i");
+			}
 	}
 
 	public void Suma(){
@@ -45,5 +43,21 @@ public class CalComplejos{
 		this.im_f = this.im_1 - this.im_2;
 	}
 
+	public void Mult(){
+		this.real_f = (this.real_1*this.real_2) - (this.im_1*this.im_2);
+		this.im_f = (this.real_1*this.im_2) + (this.im_1*this.real_2); 
+	}
 
+	public void Div(){
+		this.real_f = ((this.real_1*this.real_2) + (this.im_1*this.im_2)) / (Math.pow(real_2,2) + Math.pow(im_2,2));
+		this.im_f = ((this.im_1*this.real_2) - (this.real_1*this.im_2)) / (Math.pow(real_2,2) + Math.pow(im_2,2));
+	}
+
+	public double Ang(){
+		return ((Math.atan2(this.im_1, this.real_1)*180)/Math.PI);
+	}
+
+	public double Mod(){
+		return Math.sqrt(Math.pow(this.real_1,2) + Math.pow(im_1,2));
+	}
 }
