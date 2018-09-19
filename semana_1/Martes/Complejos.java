@@ -5,10 +5,10 @@ public class Complejos{
 		Scanner teclado = new Scanner(System.in);
 
 		CalComplejos c1 = new CalComplejos();
-
-
-		System.out.println("***Menu***\n1)Suma\n2)Resta\n3)Multiplicacion\n4)Division\n5)Angulo\n6)Modulo\n7)Cambiar numeros\n8)Salir\nCual es su seleccion?");
-		int opc = teclado.nextInt();
+		int opc=1;
+		while(opc!=0){
+		System.out.println("\n\n***Menu***\n1)Suma\n2)Resta\n3)Multiplicacion\n4)Division\n5)Angulo\n6)Modulo\n7)Cambiar numeros\n8)Salir\nCual es su seleccion?");
+		opc = teclado.nextInt();
 
 		switch(opc) {
 			case 1:
@@ -66,8 +66,13 @@ public class Complejos{
 			}
 			break;
 
+			case 8:
+			opc=0;
+			break;
+
 			default: System.out.println("Opcion no conocida, intentalo de nuevo");
 		}
 
+		}
 	}
 }
